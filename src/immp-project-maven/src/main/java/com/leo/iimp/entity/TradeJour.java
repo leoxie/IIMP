@@ -8,6 +8,9 @@ public class TradeJour {
 
 	/* 流水 */
 	private String serialNo;
+	
+	/*发卡行编号 */
+	private String cardBankNo;
 
 	/* 接收方标识 */
 	private String receiverID;
@@ -99,6 +102,14 @@ public class TradeJour {
 
 	public void setSerialNo(String serialNo) {
 		this.serialNo = serialNo;
+	}
+	
+	public String getCardBankNo() {
+		return cardBankNo;
+	}
+
+	public void setCardBankNo(String cardBankNo) {
+		this.cardBankNo = cardBankNo;
 	}
 
 	public String getReceiverID() {
