@@ -1,5 +1,6 @@
 package com.leo.iimp;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import com.leo.iimp.analyzer.TradeJourAnalyzer;
@@ -9,7 +10,7 @@ import junit.framework.TestCase;
 
 public class TradeJourTestCase extends TestCase {
 
-	public final void  testReadFile() {
+	public final void  testReadFile() throws UnsupportedEncodingException {
 		String path = this.getClass().getResource("").getPath()+"testOriData.data";
 		List<TradeJour> tradeJours = TradeJourAnalyzer.getTradeJour(path);
 		
@@ -118,5 +119,59 @@ public class TradeJourTestCase extends TestCase {
 		assertEquals("156",tradeJours.get(0).getTradeCurrency());
 		assertEquals("156",tradeJours.get(10).getTradeCurrency());
 		assertEquals("156",tradeJours.get(14).getTradeCurrency());
+		
+		
+		//settlementAmount
+		assertEquals(new Double(23126.0),tradeJours.get(0).getSettlementAmount());
+		assertEquals(new Double(4980.0),tradeJours.get(10).getSettlementAmount());
+		assertEquals(new Double(50.0),tradeJours.get(14).getSettlementAmount());
+		
+		//tradeAuthNo
+		assertEquals("716053",tradeJours.get(0).getTradeAuthNo());
+		assertEquals("693141",tradeJours.get(10).getTradeAuthNo());
+		assertEquals("134724",tradeJours.get(14).getTradeAuthNo());
+		
+		//tradeTypeID
+		assertEquals("PER",tradeJours.get(0).getTradeTypeID());
+		assertEquals("PER",tradeJours.get(10).getTradeTypeID());
+		assertEquals("PER",tradeJours.get(14).getTradeTypeID());
+		
+		//responseNo
+		assertEquals("00",tradeJours.get(0).getResponseNo());
+		assertEquals("00",tradeJours.get(10).getResponseNo());
+		assertEquals("00",tradeJours.get(14).getResponseNo());
+		
+		//tradeAuthNo
+		assertEquals("广州市白云区黄石鸿海",tradeJours.get(0).getMerchantName());
+		assertEquals("广州市白云区黄石大成",tradeJours.get(10).getMerchantName());
+		assertEquals("广州市天河区东棠终际",tradeJours.get(14).getMerchantName());
+		assertEquals("广东祯服饰商行   ",tradeJours.get(39).getMerchantName());
+					  
+		//completeID
+		assertEquals("00",tradeJours.get(0).getCompleteID());
+		assertEquals("00",tradeJours.get(10).getCompleteID());
+		assertEquals("00",tradeJours.get(14).getCompleteID());
+		
+		
+		//bankServiceCharge
+		assertEquals(new Double(23.13),tradeJours.get(0).getBankServiceCharge());
+		assertEquals(new Double(4.98),tradeJours.get(10).getBankServiceCharge());
+		assertEquals(new Double(0.01),tradeJours.get(14).getBankServiceCharge());
+		
+		//merchantPayServiceCharge
+		assertEquals(new Double(115.63),tradeJours.get(0).getMerchantPayServiceCharge());
+		assertEquals(new Double(24.9),tradeJours.get(10).getMerchantPayServiceCharge());
+		assertEquals(new Double(0.5),tradeJours.get(14).getMerchantPayServiceCharge());
+		
+		//selfAccountID
+		assertEquals("0",tradeJours.get(0).getSelfAccountID());
+		assertEquals("0",tradeJours.get(10).getSelfAccountID());
+		assertEquals("0",tradeJours.get(14).getSelfAccountID());
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("广州市白云区黄石鸿海".length());
 	}
 }

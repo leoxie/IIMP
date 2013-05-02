@@ -73,13 +73,13 @@ public class TradeJour {
 	private double settlementAmount;
 	
 	/* 交易授权码 */
-	private double tradeAuthNo;
+	private String tradeAuthNo;
 
 	/* 交易类型识别 */
-	private double tradeTypeID;
+	private String tradeTypeID;
 	
 	/* 交易响应码 */
-	private double responseNo;
+	private String responseNo;
 
 	/* 商户名 */
 	private String merchantName;
@@ -94,7 +94,7 @@ public class TradeJour {
 	private double merchantPayServiceCharge;
 
 	/* 个人账户标识 */
-	private double selfAccountID;
+	private String selfAccountID;
 
 	public String getSerialNo() {
 		return serialNo;
@@ -272,27 +272,27 @@ public class TradeJour {
 		this.settlementAmount = settlementAmount;
 	}
 
-	public double getTradeAuthNo() {
+	public String getTradeAuthNo() {
 		return tradeAuthNo;
 	}
 
-	public void setTradeAuthNo(double tradeAuthNo) {
+	public void setTradeAuthNo(String tradeAuthNo) {
 		this.tradeAuthNo = tradeAuthNo;
 	}
 
-	public double getTradeTypeID() {
+	public String getTradeTypeID() {
 		return tradeTypeID;
 	}
 
-	public void setTradeTypeID(double tradeTypeID) {
+	public void setTradeTypeID(String tradeTypeID) {
 		this.tradeTypeID = tradeTypeID;
 	}
 
-	public double getResponseNo() {
+	public String getResponseNo() {
 		return responseNo;
 	}
 
-	public void setResponseNo(double responseNo) {
+	public void setResponseNo(String responseNo) {
 		this.responseNo = responseNo;
 	}
 
@@ -328,13 +328,11 @@ public class TradeJour {
 		this.merchantPayServiceCharge = merchantPayServiceCharge;
 	}
 
-	public double getSelfAccountID() {
+	public String getSelfAccountID() {
 		return selfAccountID;
 	}
 
-	public void setSelfAccountID(double selfAccountID) {
+	public void setSelfAccountID(String selfAccountID) {
 		this.selfAccountID = selfAccountID;
 	}
-	
-	
 }
